@@ -5,10 +5,10 @@ Bem-vindo(a) ao repositório de Estrutura de dados com Python! Aqui você encont
 ## Conteúdo
 Os exemplos foram cuidadosamente organizados em pastas temáticas para facilitar o acesso ao conteúdo. Veja abaixo algumas das pastas disponíveis:
 
-### Revisão: 
+### [Revisão:](./Revisao/) 
 Aqui você encontrará exemplos de códigos básicos que introduzem os conceitos fundamentais da linguagem Python, como variáveis, estruturas de controle e funções.
 
-### Estrutura de dados: 
+### [Estrutura de Dados:](./Estrutura%20de%20dados/) 
 Nesta pasta você encontrará exemplos de códigos que exploram as principais estruturas de dados em Python, como listas, tuplas e dicionários.
 
 Os exemplos podem ser usados para ajudar no aprendizado de novos conceitos, para revisar os conceitos já estudados ou como base para a criação de novos programas.
