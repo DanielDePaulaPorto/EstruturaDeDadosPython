@@ -1,5 +1,6 @@
 # REVISÃO DE PYTHON
 # -----------------
+# Daniel Porto
 # Baseado em: https://www.freecodecamp.org/news/the-python-guide-for-beginners/
 # -----------------
 
@@ -663,10 +664,9 @@ print(resultado)
 # Nosso exemplo seria: o resultado será x se a for maior que b; caso contrário será y.
 
 
-#***** 04/04 *****
-
 # while Loops
-# Loops são usados quando você precisa repetir um bloco de código um certo número de vezes ou aplicar a mesma lógica sobre cada item de uma coleção.
+# Loops são usados quando você precisa repetir um bloco de código um certo número de vezes ou aplicar a mesma lógica
+# sobre cada item de uma coleção.
 
 # Há dois tipos de loops: for e while.
 
@@ -870,6 +870,218 @@ for pessoa in pessoas:
 pessoas = {'Conan': 30, 'Xena': 25}
 for pessoa in pessoas:
     print(pessoas[pessoa])
+
+
+
+
+# Operadores de associação
+# Estes operadores fornecem uma maneira fácil de verificar se um determinado objeto está presente em uma sequência:
+# string, lista, tupla, set e dicionário.
+
+# Estes operadores são:
+
+# in: retorna Verdadeiro se o objeto está presente
+# not in: retorna Verdadeiro se o objeto não está presente
+# Vamos ver um programa que mostra como cada um deles é utilizado.
+
+lista_número = [1, 2, 4, 5, 6]
+print(1 in number_list)
+print(5 not in number_list)
+print(3 not in number_list)
+
+
+# Listas
+# Uma lista tem os seus itens ordenados e podemos adicionar o mesmo item quantas vezes quisermos.
+# Um detalhe importante é que as listas são mutáveis!
+# Mutabilidade significa que pode alterar uma lista após a sua criação, adicionando itens, removendo-os, ou mesmo apenas alterando os seus valores.
+
+# Inicialização
+# Lista Vazia
+pessoas = []
+
+# Lista com valores iniciais
+pessoas = ['Bob', 'Mary']
+
+# Adicionando numa lista
+# Para adicionar um item no final de uma lista, utilize o append().
+pessoas = ['Bob', 'Mary']
+pessoas.append('Sarah')
+
+print(pessoas)
+
+# Para especificar a posição para o novo item, devemos utilizar o método insert().
+pessoas = ['Bob', 'Mary']
+pessoas.insert(0, 'Sarah')
+
+print(pessoas)
+
+# Atualização numa lista
+# Especifique a posição do item a atualizar e defina o novo valor
+pessoas = ['Bob', 'Mary']
+pessoas[1] = 'Sarah'
+print(pessoas)
+
+# Remoção em um lista
+# Utilizar o método remove() para eliminar o item passado como argumento.
+pessoas = ['Bob', 'Mary']
+pessoas.remove('Bob')
+print(pessoas)
+
+# Para apagar toda a lista, utilizar o método clear():
+pessoas = ['Bob', 'Mary']
+pessoas.clear()
+
+# Recuperando numa lista
+# Use o índice para referenciar o item.
+# Lembre-se de que o índice começa em 0.
+# Por isso, para recuperar o segundo item, utilize o índice 1.
+pessoas = ['Bob', 'Mary']
+print(pessoas[1])
+
+# Verificar se um determinado item já existe numa Lista
+pessoas = ['Bob', 'Mary']
+
+if 'Bob' in pessoas:
+  print('Bob existe!')
+else:
+  print('Não existe Bob!')
+
+
+
+
+# Tuplas
+# Um tupla é semelhante a uma lista: é ordenada, e permite a repetição de itens.
+# Há apenas uma diferença: um tupla é imutável.
+# A imutabilidade, significa que não se pode mudar uma tupla após a sua criação.
+# Se tentarmos adicionar um item ou atualizar um item, por exemplo, o interpretador Python irá mostrar um erro.
+
+# Inicialização
+# Tupla Vazio
+pessoas = ()
+
+# Tupla com valores iniciais
+pessoas = ('Bob', 'Mary')
+
+# Adicionando numa Tupla
+# As tuplas são imutáveis. Isto significa que, se tentarmos adicionar um item, teremos um erro.
+pessoas = ('Bob', 'Mary')
+pessoas[2] = 'Sarah'
+
+# Atualização num Tupla
+# A atualização de um item também devolverá um erro.
+
+# Mas há um truque: podemos converter a tupla numa lista, alterar o item, e depois convertê-la de volta para uma Tupla.
+pessoas = ('Bob', 'Mary')
+lista_de_pessoas = list(pessoas)
+lista_de_pessoas[1] = 'Sarah'
+pessoas = tuple(lista_de_pessoas)
+print(pessoas)
+
+# Remoção em uma Tupla
+# Pela mesma razão que não se pode adicionar um item, também não se pode apagar um item, uma vez que são imutáveis.
+
+# Recuperando num Tupla
+# Use o índice para referenciar o item.
+pessoas = ('Bob', 'Mary')
+print(pessoas[1])
+
+# Verificar se um determinado item já existe num Tupla
+pessoas = ('Bob', 'Mary')
+
+if 'Bob' in pessoas:
+  print('Bob existe!')
+else:
+  print('Não existe Bob!')
+
+
+
+
+# Sets
+# Os Sets não garantem a ordem dos itens e não são indexados.
+# Um ponto chave ao utilizar sets: não permitem a repetição de um item.
+
+# Inicialização
+# Set Vazio
+pessoas = set()
+
+# Set com valores iniciais
+pessoas = {'Bob', 'Mary'}
+
+# Adicionando num Set
+# Use o método add() para adicionar um item.
+pessoas.add('Sarah')
+
+# Utilizar o método update() para adicionar vários itens ao mesmo tempo.
+pessoas.update(['Carol', 'Susan'])
+
+# Lembre-se, os sets não permitem a repetição, por isso se voltar a acrescentar 'Mary', nada muda.
+pessoas = {'Bob', 'Mary'}
+pessoas.add('Mary')
+print(pessoas)
+
+# Atualização em um Set
+# Os itens de um set não são mutáveis. É necessário adicionar ou apagar um item.
+
+# Remoção em um Set
+# Para remover Bob do set:
+
+pessoas = {'Bob', 'Mary'}
+pessoas.remove('Bob')
+print(pessoas)
+
+# Para apagar todo o set:
+pessoas.clear()
+
+# Verificar se um determinado item já existe em um set
+pessoas = {'Bob', 'Mary'}
+
+if 'Bob' in pessoas:
+  print('Bob existe!')
+else:
+  print('Não existe Bob!')
+
+
+
+
+# Dicionários
+# O dicionário não garante a ordem dos elementos e é mutável.
+# Uma característica importante dos dicionários é que podemos definir as suas chaves de acesso personalizadas para cada elemento.
+
+# Inicialização de um Dicionário
+# Dicionário Vazio
+pessoas = {}
+
+# Dicionário com valores iniciais
+pessoas = {'Bob':30, 'Mary':25}
+
+# Adicionando em um Dicionário
+# Se a chave ainda não existe, é anexada ao dicionário.
+pessoas['Sarah'] = 32
+
+# Atualização de um Dicionário
+# Se a chave já existir, o valor é apenas atualizado.
+
+#A idade do Bob é agora 28 anos
+pessoas['Bob'] = 28
+
+# Repare que o código é praticamente o mesmo.
+
+# Remoção em um Dicionário
+# Para remover Bob do dicionário:
+pessoas.pop('Bob')
+
+# Para apagar todo o dicionário:
+pessoas.clear()
+
+# Recuperação de um valor no Dicionário
+bob_age = pessoas['Bob']
+print(bob_age)
+
+# Verificar se uma determinada chave já existe num Dicionário
+if 'Bob' in pessoas:
+  print('Bob existe!')
+else:
+  print('Não existe Bob!')
 
 
 
@@ -1272,7 +1484,5 @@ print(__name__)
 # --------------
 # Arquivos
 # Classes, heranças...
-# Listas, Tuplas, Sets e Dicionários
-# Operadores de associação
 # Exceções
 
