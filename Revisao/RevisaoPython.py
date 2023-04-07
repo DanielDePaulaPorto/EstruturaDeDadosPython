@@ -1096,7 +1096,7 @@ else:
 # Dar-lhe um nome e usar parênteses para informar 0 ou mais argumentos.
 # Na linha após o início da declaração, lembre-se de recuar o bloco de código.
 
-# Aqui está um exemplo de uma função chamada print_first_function() que imprime apenas uma frase 'Minha primeira função!
+# Aqui está um exemplo de uma função chamada minha_primeira_funcao() que imprime apenas uma frase 'Minha primeira função!'
 
 # Para chamar a função basta usar seu nome, conforme definido.
 
