@@ -45,6 +45,25 @@ class Arvore:
             self.printPostorder(no)
         print(noPai.valor)
 
+    def imprimir_arvore(self, no, prefixo="", is_ultimo=True):
+        # Imprime o prefixo
+        print(prefixo, end="")
+
+        # Verifica se é o último nó do nível
+        if is_ultimo:
+            print("`-- ", end="")
+            prefixo += "    "
+        else:
+            print("|-- ", end="")
+            prefixo += "|   "
+
+        # Imprime o valor do nó atual
+        print(no.valor)
+
+        # Imprime os filhos recursivamente
+        for i, filho in enumerate(no.filhos):
+            self.imprimir_arvore(filho, prefixo, i == len(no.filhos) - 1)
+
     # - função que conte o número total de nós
     def contaNos(self, noPai):
         contador = 1
@@ -140,19 +159,21 @@ no21112.inserirFilho(no211112)
 
 arvore = Arvore(noRaiz)
 
-print(f"Quantidade de nós: {arvore.contaNos(noRaiz)}")
+arvore.imprimir_arvore(noRaiz)
 
-arvore.printPreorder(noRaiz)
-print("---")
-arvore.printPostorder(noRaiz)
-
-print("---")
-print(f"Qunatidade de folhas: {arvore.getFolhas(noRaiz)}")
-
-print("---")
-print(f"Altura: {arvore.getAltura(noRaiz)}")
-
-print("---")
-arvore.poda(noRaiz, 3, 0)
-print(f"Altura: {arvore.getAltura(noRaiz)}")
-arvore.printPreorder(noRaiz)
+# print(f"Quantidade de nós: {arvore.contaNos(noRaiz)}")
+#
+# arvore.printPreorder(noRaiz)
+# print("---")
+# arvore.printPostorder(noRaiz)
+#
+# print("---")
+# print(f"Qunatidade de folhas: {arvore.getFolhas(noRaiz)}")
+#
+# print("---")
+# print(f"Altura: {arvore.getAltura(noRaiz)}")
+#
+# print("---")
+# arvore.poda(noRaiz, 3, 0)
+# print(f"Altura: {arvore.getAltura(noRaiz)}")
+# arvore.printPreorder(noRaiz)
